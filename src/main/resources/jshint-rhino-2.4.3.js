@@ -13550,29 +13550,6 @@ var checkstyleReporter =
       if (!files[result.name]) {
         files[result.name] = [];
       }
-
-      if (globals) {
-        globals.forEach(function (global) {
-          files[result.name].push({
-            severity: 'warning',
-            line: global.line,
-            column: 0,
-            message: "Implied global '" + global.name + "'",
-            source: 'jshint.implied-globals'
-          });
-        });
-      }
-      if (unuseds) {
-        unuseds.forEach(function (unused) {
-          files[result.name].push({
-            severity: 'warning',
-            line: unused.line,
-            column: 0,
-            message: "Unused variable: '" + unused.name + "'",
-            source: 'jshint.implied-unuseds'
-          });
-        });
-      }
     });
 
     out.push("<?xml version=\"1.0\" encoding=\"utf-8\"?>");
